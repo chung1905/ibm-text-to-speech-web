@@ -1,5 +1,8 @@
 # IBM Text to Speech web interface
 
+## Preview Image
+![Preview Image](https://gitlab.com/chung1905/ibm-text-to-speech-web/-/wikis/uploads/e3e130c47c8374ed33a1ec50f7e648fb/Screenshot_2021-01-18_TTS.png)
+
 ## Setup
 - PHP
 - Get credentials
