@@ -35,20 +35,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['text'])) {
             $voice = $_POST['voice'];
         }
     }
-    $apikey = $env['API_KEY'];
-    $url = $env['API_URL'];
+
+    $outDir = './out/';
+    if (!is_dir($outDir)) {
+        mkdir($outDir);
+    }
     $text = $_POST['text'];
     $text = preg_replace("/\r\n+|\r+|\n+/", '. ', trim($text));
     $text = str_replace('"', '\"', $text);
     $fileName = genFileName($text);
-    $output = 'out/' . $fileName . '.wav';
-    $logFile = 'out/' . $fileName . '.log';
+    $output = $outDir . $fileName . '.wav';
+    $logFile = $outDir . $fileName . '.log';
     $curl = <<<CURL
-curl -X POST -u "apikey:${apikey}" \
+curl -X POST -u "apikey:${env['API_KEY']}" \
 --header "Content-Type: application/json" \
 --header "Accept: audio/wav" \
 --data "{\"text\":\"$text\"}" \
---output $output "${url}/v1/synthesize?voice=$voice"
+--output $output "${env['API_URL']}/v1/synthesize?voice=$voice"
 
 CURL;
     file_put_contents($logFile, $curl);
