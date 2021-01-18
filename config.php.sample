@@ -1,0 +1,5 @@
+<?php
+return [
+    "API_KEY" => "KA-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "API_URL" => "https://api.us-south.text-to-speech.watson.cloud.ibm.com/instances/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+];
