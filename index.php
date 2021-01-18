@@ -67,6 +67,7 @@ CURL;
 <html lang="en">
 <head>
     <title>TTS</title>
+    <link rel="icon" href="data:image/png;base64,iVBORw0KGgo=">
 </head>
 <body>
 <main>
